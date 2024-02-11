@@ -26,23 +26,23 @@ class ControlSniffer extends Control:
 			print_recursive(child, depth + 1)
 	
 	func inject():
-		var debug = true
 		for child in get_parent().get_children(true):
 			if child.get_class() == "EditorInspectorSection":
 				var vbox = child.get_child(0)
-				for prop : Control in vbox.get_children():
+				for prop : EditorProperty in vbox.get_children():
+					
+					var hoisted_property = HoistedProperty.new()
+					hoisted_property.configure(prop)
+					
+					if not hoisted_property.is_valid():
+						continue
+						
 					var container = HBoxContainer.new()
 					var checkbox = PropertyOverrideCheckbox.new()
 					container.add_child(checkbox)
 					
-					checkbox.configure(prop.get_edited_property(), prop.get_edited_object(), hoist)
+					checkbox.configure(hoisted_property, hoist)
 					
-					if debug:
-						print(prop)
-						print(prop.get_edited_property())
-						var edited_prop : Object = prop.get_edited_object()
-						print(edited_prop.owner.get_path_to(edited_prop))
-						debug = false
 					prop.add_sibling(container)
 					prop.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 					prop.reparent(container)

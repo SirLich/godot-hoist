@@ -6,12 +6,19 @@ Resource which captures and stores the number of exported buttons
 extends Resource
 class_name TheHoist
 
-@export var num_exported : int
 @export var properties : Dictionary
-@export var string_id : String
+@export var is_new_asset = true
 
-func test():
-	print("HELLO WORLD!")
+func _init() -> void:
+	for key in properties:
+		var value = properties[key]
+	if is_new_asset:
+		pass
+	else:
+		pass
+		
+	is_new_asset = false
+	resource_local_to_scene = true
 	
 func on_property_toggled(prop : HoistedProperty, toggled : bool):
 	if toggled:

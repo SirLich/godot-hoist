@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr7c12yl4i80l"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_ns5if"]
+[ext_resource type="Script" path="res://addons/hoist/the_hoist.gd" id="2_pbxmq"]
+[ext_resource type="Script" path="res://addons/hoist/hoisted_property.gd" id="2_w6q2k"]
+[ext_resource type="Texture2D" uid="uid://bd2cbwjmbr6o8" path="res://icon.svg" id="3_2a850"]
+
+[sub_resource type="Resource" id="Resource_xef5w"]
+script = ExtResource("2_w6q2k")
+property_name = "centered"
+
+[sub_resource type="Resource" id="Resource_r0mnq"]
+script = ExtResource("2_w6q2k")
+property_name = "offset"
+
+[sub_resource type="Resource" id="Resource_mb4k1"]
+script = ExtResource("2_w6q2k")
+property_name = "flip_h"
+
+[sub_resource type="Resource" id="Resource_gf34u"]
+script = ExtResource("2_pbxmq")
+num_exported = 0
+properties = {
+"centered": SubResource("Resource_xef5w"),
+"flip_h": SubResource("Resource_mb4k1"),
+"offset": SubResource("Resource_r0mnq")
+}
+string_id = ""
+
+[node name="Game" type="Node2D"]
+modulate = Color(0.972549, 0, 0.392157, 1)
+script = ExtResource("1_ns5if")
+hoist = SubResource("Resource_gf34u")
+int_test = 98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("3_2a850")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+offset_right = 40.0
+offset_bottom = 40.0

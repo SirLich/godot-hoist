@@ -17,9 +17,11 @@ func _parse_end(object: Object) -> void:
 func _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: int, wide: bool) -> bool:
 	var inspected_object = object[name]
 	if inspected_object is TheHoist:
-		for hoisted_property in inspected_object.properties:
+		for prop_name in inspected_object.properties:
+			
+			inspected_object.properties[prop_name].configure_owning_object(object)
 			var editor = HoistPropertyEditor.new()
-			editor.configure(inspected_object.properties[hoisted_property], object)
+			editor.configure(inspected_object.properties[prop_name], object)
 			add_custom_control(editor)
 		return true
 	else:

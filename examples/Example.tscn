@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/hoist/the_hoist.gd" id="3_8fs7m"]
 [ext_resource type="Texture2D" uid="uid://bd2cbwjmbr6o8" path="res://icon.svg" id="4_u60pw"]
 
-[sub_resource type="Resource" id="Resource_p1f3b"]
+[sub_resource type="Resource" id="Resource_0hxm4"]
 script = ExtResource("2_iq2k1")
 property_name = "visible"
 property_path = NodePath("Sprite2D")
@@ -17,18 +17,23 @@ property_data = {
 "type": 1,
 "usage": 6
 }
+value_wrapper = {
+"inner": null
+}
 
-[sub_resource type="Resource" id="Resource_u8hbd"]
+[sub_resource type="Resource" id="Resource_rax5b"]
 resource_local_to_scene = true
 script = ExtResource("3_8fs7m")
 properties = {
-"visible": SubResource("Resource_p1f3b")
+"visible": SubResource("Resource_0hxm4")
 }
-is_new_asset = null
+is_new_asset = false
 
 [node name="Example" type="Node2D"]
 script = ExtResource("1_jsbxn")
-hoist = SubResource("Resource_u8hbd")
+hoist = SubResource("Resource_rax5b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_u60pw")
+centered = false

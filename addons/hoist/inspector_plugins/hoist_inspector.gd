@@ -23,7 +23,7 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 			var editor = HoistPropertyEditor.new()
 			editor.configure(inspected_object.properties[prop_name], object)
 			add_custom_control(editor)
-		return true
+		return false
 	else:
 		return false
 		

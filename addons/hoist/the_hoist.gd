@@ -10,8 +10,8 @@ class_name TheHoist
 @export var properties : Dictionary
 @export var is_new_asset : bool
 
-func _init() -> void:
-	resource_local_to_scene = true
+#func _init() -> void:
+	#resource_local_to_scene = true
 	
 func refresh() -> void:
 	print("Initing TheHoist!")

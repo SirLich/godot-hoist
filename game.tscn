@@ -1,36 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr7c12yl4i80l"]
+[gd_scene load_steps=3 format=3 uid="uid://dr7c12yl4i80l"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_ns5if"]
 [ext_resource type="PackedScene" uid="uid://t6nqa4qauubb" path="res://examples/Example.tscn" id="2_vvluj"]
-[ext_resource type="Script" path="res://addons/hoist/hoisted_property.gd" id="3_tvwef"]
-[ext_resource type="Script" path="res://addons/hoist/the_hoist.gd" id="4_1slrs"]
-
-[sub_resource type="Resource" id="Resource_0hxm4"]
-script = ExtResource("3_tvwef")
-property_name = "visible"
-property_path = NodePath("Sprite2D")
-property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "visible",
-"type": 1,
-"usage": 6
-}
-value_wrapper = {
-"inner": false
-}
-
-[sub_resource type="Resource" id="Resource_6v5ts"]
-resource_local_to_scene = true
-script = ExtResource("4_1slrs")
-properties = {
-"visible": SubResource("Resource_0hxm4")
-}
-is_new_asset = false
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ns5if")
 
 [node name="Example" parent="." instance=ExtResource("2_vvluj")]
-hoist = SubResource("Resource_6v5ts")
+
+[node name="Example2" parent="." instance=ExtResource("2_vvluj")]
+position = Vector2(307, 95)

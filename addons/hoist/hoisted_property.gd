@@ -6,18 +6,29 @@ class_name HoistedProperty
 @export var property_name : String
 @export var property_path : NodePath
 @export var property_data : Dictionary
-@export var value_wrapper : Dictionary
+
+# Local to scene
+@export var cache : Dictionary
 
 # Transient Fields
 var owning_object
+var rid
 
 var valid_types = [
 	TYPE_BOOL
 ]
 
+func set_cache_value(variant):
+	if not cache:
+		cache = {}
+	cache[rid] = variant
+
+func get_cache_value():
+	return cache[rid]
+	
 func set_value(variant):
 	print("SetValue called: ", property_name, " ", variant)
-	value_wrapper.inner = variant
+	set_cache_value(variant)
 	owning_object.get_node(property_path)[property_name] = variant
 	
 func get_value():
@@ -32,7 +43,7 @@ func refresh_value(is_new_asset):
 	if is_new_asset:
 		get_value() # Not really needed
 	else:
-		set_value(value_wrapper.inner) # Re-serialize from the saved field
+		set_value(get_cache_value()) # Re-serialize from the saved field
 
 func _get_property(prop, name):
 	for p in prop.get_property_list():
@@ -40,15 +51,15 @@ func _get_property(prop, name):
 			return p
 	return null
 
-func configure_owning_object(owner):
+func configure_owning_object(owner : Node):
+	print("----")
+	print("Configuring Owner ", owner)
+	self.rid = owner.get_instance_id()
 	self.owning_object = owner
 	
 func configure(prop : EditorProperty):
 	var edited_prop : Object = prop.get_edited_object()
 	var path = edited_prop.owner.get_path_to(edited_prop)
-	self.value_wrapper = {
-		"inner": null
-	}
 	self.property_name = prop.get_edited_property()
 	self.property_path = path
 	self.property_data = _get_property(prop.get_edited_object(), prop.get_edited_property())

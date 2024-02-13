@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="TheHoist" load_steps=5 format=3 uid="uid://ctyq7juf1cnmr"]
+
+[ext_resource type="Script" path="res://addons/hoist/hoisted_property.gd" id="1_jw0dc"]
+[ext_resource type="Script" path="res://addons/hoist/the_hoist.gd" id="1_myahx"]
+
+[sub_resource type="Resource" id="Resource_m0s0d"]
+script = ExtResource("1_jw0dc")
+property_name = "centered"
+property_path = NodePath("Sprite2D")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "centered",
+"type": 1,
+"usage": 6
+}
+cache = {
+1690673673144: null,
+1694247220158: null,
+3139117839839: null,
+3139151394140: false,
+4371958024062: null,
+4371991557584: null
+}
+
+[sub_resource type="Resource" id="Resource_fo0c7"]
+script = ExtResource("1_jw0dc")
+property_name = "visible"
+property_path = NodePath("Sprite2D")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "visible",
+"type": 1,
+"usage": 6
+}
+cache = {
+1690673673144: null,
+1694247220158: null,
+3139117839839: true,
+3139151394140: false,
+4371958024062: true,
+4371991557584: false
+}
+
+[resource]
+script = ExtResource("1_myahx")
+properties = {
+"centered": SubResource("Resource_m0s0d"),
+"visible": SubResource("Resource_fo0c7")
+}
+is_new_asset = false

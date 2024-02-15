@@ -28,7 +28,7 @@ func get_cache_value():
 	
 func set_value(variant):
 	print("SetValue called: ", property_name, " ", variant)
-	set_cache_value(variant)
+	#set_cache_value(variant)
 	owning_object.get_node(property_path)[property_name] = variant
 	
 func get_value():
@@ -39,11 +39,11 @@ func get_value():
 # Refreshes the value from serialized data
 func refresh_value(is_new_asset):
 	print("Refreshing ", is_new_asset)
-	# If the asset is newly created, we should 
-	if is_new_asset:
-		get_value() # Not really needed
-	else:
-		set_value(get_cache_value()) # Re-serialize from the saved field
+	## If the asset is newly created, we should 
+	#if is_new_asset:
+		#get_value() # Not really needed
+	#else:
+		#set_value(get_cache_value()) # Re-serialize from the saved field
 
 func _get_property(prop, name):
 	for p in prop.get_property_list():

@@ -9,10 +9,10 @@ class_name TheHoist
 # Map: String -> HoistedProperty
 @export var properties : Dictionary
 @export var is_new_asset : bool
-
-#func _init() -> void:
-	#resource_local_to_scene = true
 	
+func _init() -> void:
+	print("HELLO WORLD")
+
 func refresh() -> void:
 	print("Initing TheHoist!")
 	for key in properties:

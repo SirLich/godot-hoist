@@ -10,3 +10,13 @@ script = ExtResource("1_ns5if")
 
 [node name="Example2" parent="." instance=ExtResource("2_vvluj")]
 position = Vector2(307, 95)
+
+[node name="Example3" parent="." instance=ExtResource("2_vvluj")]
+position = Vector2(209, 351)
+
+[node name="Sprite2D" parent="Example3" index="0"]
+visible = false
+
+[editable path="Example"]
+[editable path="Example2"]
+[editable path="Example3"]

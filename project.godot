@@ -14,6 +14,14 @@ config/name="Components"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor]
+
+hoist/debug=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/hoist/plugin.cfg")
+
+[hoist]
+
+debug=false

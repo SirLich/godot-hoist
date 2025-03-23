@@ -16,19 +16,6 @@ property_data = {
 "usage": 6
 }
 
-[sub_resource type="Resource" id="Resource_ago30"]
-script = ExtResource("1_jw0dc")
-property_name = "z_as_relative"
-property_path = NodePath("Sprite2D")
-property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "z_as_relative",
-"type": 1,
-"usage": 6
-}
-
 [sub_resource type="Resource" id="Resource_82ulr"]
 script = ExtResource("1_jw0dc")
 property_name = "y_sort_enabled"
@@ -38,6 +25,19 @@ property_data = {
 "hint": 0,
 "hint_string": "",
 "name": "y_sort_enabled",
+"type": 1,
+"usage": 6
+}
+
+[sub_resource type="Resource" id="Resource_ago30"]
+script = ExtResource("1_jw0dc")
+property_name = "z_as_relative"
+property_path = NodePath("Sprite2D")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "z_as_relative",
 "type": 1,
 "usage": 6
 }

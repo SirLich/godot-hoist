@@ -19,11 +19,6 @@ class ControlSniffer extends Control:
 	func configure(object : Object):
 		self.object = object
 		self.hoist = object.owner.hoist
-		
-	func print_recursive(node, depth):
-		for child in node.get_children(true):
-			print(" ".repeat(depth), child.get_class())
-			print_recursive(child, depth + 1)
 	
 	func inject():
 		for child in get_parent().get_children(true):
@@ -47,18 +42,10 @@ class ControlSniffer extends Control:
 					prop.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 					prop.reparent(container)
 
-					
- 		
 	func _ready() -> void:
-		print("----")
 		inject()
 
-			
 func _parse_end(object: Object):
 	var sniffer = ControlSniffer.new()
 	sniffer.configure(object)
 	add_custom_control(sniffer)
-	
-func _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: int, wide: bool) -> bool:
-	return false
-		

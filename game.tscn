@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dr7c12yl4i80l"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_ns5if"]
+[ext_resource type="Script" uid="uid://cycrirrnt4ktq" path="res://game.gd" id="1_ns5if"]
 [ext_resource type="PackedScene" uid="uid://t6nqa4qauubb" path="res://examples/Example.tscn" id="2_vvluj"]
 
 [node name="Game" type="Node2D"]
@@ -8,15 +8,4 @@ script = ExtResource("1_ns5if")
 
 [node name="Example" parent="." instance=ExtResource("2_vvluj")]
 
-[node name="Example2" parent="." instance=ExtResource("2_vvluj")]
-position = Vector2(307, 95)
-
-[node name="Example3" parent="." instance=ExtResource("2_vvluj")]
-position = Vector2(209, 351)
-
-[node name="Sprite2D" parent="Example3" index="0"]
-visible = false
-
 [editable path="Example"]
-[editable path="Example2"]
-[editable path="Example3"]

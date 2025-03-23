@@ -21,6 +21,9 @@ class ControlSniffer extends Control:
 		self.hoist = object.owner.hoist
 	
 	func inject():
+		
+		## Loop over all children of the node within which TheHoist exists.
+		## TODO: Add grand-children support?
 		for child in get_parent().get_children(true):
 			if child.get_class() == "EditorInspectorSection":
 				var vbox = child.get_child(0)

@@ -1,20 +1,7 @@
-[gd_resource type="Resource" script_class="TheHoist" load_steps=6 format=3 uid="uid://ctyq7juf1cnmr"]
+[gd_resource type="Resource" script_class="TheHoist" load_steps=9 format=3 uid="uid://ctyq7juf1cnmr"]
 
 [ext_resource type="Script" uid="uid://cpxtss3u201x8" path="res://addons/hoist/hoisted_property.gd" id="1_jw0dc"]
 [ext_resource type="Script" uid="uid://bkqg7pfovxw48" path="res://addons/hoist/the_hoist.gd" id="1_myahx"]
-
-[sub_resource type="Resource" id="Resource_bo5u8"]
-script = ExtResource("1_jw0dc")
-property_name = "visible"
-property_path = NodePath("Sprite2D2")
-property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "visible",
-"type": 1,
-"usage": 6
-}
 
 [sub_resource type="Resource" id="Resource_82ulr"]
 script = ExtResource("1_jw0dc")
@@ -42,10 +29,66 @@ property_data = {
 "usage": 6
 }
 
+[sub_resource type="Resource" id="Resource_0m13a"]
+script = ExtResource("1_jw0dc")
+property_name = "flip_h"
+property_path = NodePath("Sprite2D2")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "flip_h",
+"type": 1,
+"usage": 6
+}
+
+[sub_resource type="Resource" id="Resource_kyndd"]
+script = ExtResource("1_jw0dc")
+property_name = "flip_v"
+property_path = NodePath("Sprite2D2")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "flip_v",
+"type": 1,
+"usage": 6
+}
+
+[sub_resource type="Resource" id="Resource_wws8u"]
+script = ExtResource("1_jw0dc")
+property_name = "centered"
+property_path = NodePath("Sprite2D2")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "centered",
+"type": 1,
+"usage": 6
+}
+
+[sub_resource type="Resource" id="Resource_3uppp"]
+script = ExtResource("1_jw0dc")
+property_name = "visible"
+property_path = NodePath("Sprite2D2")
+property_data = {
+"class_name": &"",
+"hint": 0,
+"hint_string": "",
+"name": "visible",
+"type": 1,
+"usage": 6
+}
+
 [resource]
 script = ExtResource("1_myahx")
 properties = {
-"Sprite2D2:visible": SubResource("Resource_bo5u8"),
+"Sprite2D2:centered": SubResource("Resource_wws8u"),
+"Sprite2D2:flip_h": SubResource("Resource_0m13a"),
+"Sprite2D2:flip_v": SubResource("Resource_kyndd"),
+"Sprite2D2:visible": SubResource("Resource_3uppp"),
 "Sprite2D:y_sort_enabled": SubResource("Resource_82ulr"),
 "Sprite2D:z_as_relative": SubResource("Resource_ago30")
 }
+test = false

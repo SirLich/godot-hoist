@@ -1,3 +1,8 @@
+"""
+Structure that wraps a property that is being hoisted. For example if you turn on 
+hoisting for Node2D::Visible, this HoistedProperty captures that relationship.
+"""
+
 @tool
 extends Resource
 class_name HoistedProperty
@@ -24,7 +29,7 @@ func set_value(variant):
 func get_value():
 	return owning_object.get_node(property_path)[property_name]
 
-func _get_property(prop, name):
+func _get_property(prop : Object, name):
 	for p in prop.get_property_list():
 		if p.name == name:
 			return p

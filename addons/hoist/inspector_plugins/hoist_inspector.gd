@@ -11,6 +11,7 @@ func _can_handle(object: Object) -> bool:
 		return true
 	return false
 
+## Whether Hoist can be debugged (resource visible in root). Set via project settings.
 func is_debug_hoist() -> bool:
 	var hoist_path = "editor/hoist/debug"
 	if not ProjectSettings.has_setting(hoist_path):
@@ -20,7 +21,9 @@ func is_debug_hoist() -> bool:
 func _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: int, wide: bool) -> bool:
 	var inspected_object = object[name]
 	if inspected_object is TheHoist:
-		object.get_parent().set_editable_instance(object, true)
+		
+		## Whether to force editable children on.
+		#object.get_parent().set_editable_instance(object, true)
 		for prop_name in inspected_object.properties:
 			var editor = HoistPropertyEditor.new()
 			editor.configure(inspected_object.properties[prop_name], object)

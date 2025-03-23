@@ -7,5 +7,4 @@
 script = ExtResource("1_ns5if")
 
 [node name="Example" parent="." instance=ExtResource("2_vvluj")]
-
-[editable path="Example"]
+my_own_var = 0

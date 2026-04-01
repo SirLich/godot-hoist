@@ -44,7 +44,6 @@ class ControlSniffer extends Control:
 	
 	func inject():
 		var children = get_children_by_type(get_parent(), EditorProperty)
-		print(children)
 		for prop in children:
 			var hoisted_property = HoistedProperty.new()
 			hoisted_property.configure(prop)

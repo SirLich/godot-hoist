@@ -17,6 +17,9 @@ var VALID_TYPES = [
 @export var property_path : NodePath
 @export var property_data : Dictionary
 
+## The data (Like that returned from _get_property_list)
+@export var editor_data : Dictionary
+	
 # Transient Fields
 var owning_object : Node
 
@@ -37,13 +40,21 @@ func _get_property(prop : Object, name):
 			return new_property_data
 	return null
 
+## Like _get_property_list but for just a single property.
+func get_property_info(object, property_name: String) -> Dictionary:
+	for prop in object.get_property_list():
+		if prop.name == property_name:
+			return prop
+	return {}
 	
 func configure(prop : EditorProperty):
 	var edited_prop : Object = prop.get_edited_object()
 	var path = edited_prop.owner.get_path_to(edited_prop)
 	self.property_name = prop.get_edited_property()
 	self.property_path = path
+	self.editor_data = get_property_info(edited_prop, self.property_name)
 	self.property_data = _get_property(prop.get_edited_object(), prop.get_edited_property())
+	
 	
 func is_valid() -> bool:
 	return true

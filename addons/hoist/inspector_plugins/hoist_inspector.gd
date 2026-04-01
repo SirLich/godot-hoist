@@ -25,10 +25,17 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 		## Whether to force editable children on.
 		#object.get_parent().set_editable_instance(object, true)
 		for prop_name in inspected_object.properties:
+			var hoisted_property = inspected_object.properties[prop_name]
+			
 			var editor = HoistPropertyEditor.new()
 			editor.configure(inspected_object.properties[prop_name], object)
 			add_custom_control(editor)
+			
+			
+			add_custom_control(editor)
+
 		return !is_debug_hoist() # Allows inspection of the 'Hoist' variable
 	else:
 		return false
+		
 		

@@ -7,3 +7,5 @@
 script = ExtResource("1_ns5if")
 
 [node name="Example" parent="." unique_id=1860098073 instance=ExtResource("2_vvluj")]
+
+[editable path="Example"]

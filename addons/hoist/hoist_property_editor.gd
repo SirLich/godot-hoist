@@ -7,8 +7,17 @@ extends EditorProperty
 class_name HoistPropertyEditor
 
 var hoisted_prop : HoistedProperty
+var owning_object : Object
 
+func prop_changed(property: StringName, value: Variant, field: StringName, changing: bool):
+	print(owning_object)
+	print(property)
+	print(value)
+	var object_to_use = owning_object.get_node(hoisted_prop.property_path)
+	object_to_use.set(property, value)
+	
 func configure(hoisted_prop : HoistedProperty, owning_object : Object):
+	self.owning_object = owning_object
 	set_anchors_and_offsets_preset(PRESET_CENTER_LEFT)
 	self.hoisted_prop = hoisted_prop
 			
@@ -22,4 +31,6 @@ func configure(hoisted_prop : HoistedProperty, owning_object : Object):
 	add_child(editor)
 	
 	label = hoisted_prop.get_id()
+	
+	editor.property_changed.connect(prop_changed)
 	

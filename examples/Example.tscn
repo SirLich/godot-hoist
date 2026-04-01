@@ -63,7 +63,7 @@ hoist = SubResource("Resource_68jdq")
 
 [node name="TopSprite" type="Sprite2D" parent="." unique_id=716124857]
 texture = ExtResource("4_u60pw")
-offset = Vector2(20, 0)
+offset = Vector2(50, 0)
 
 [node name="BottomSprite" type="Sprite2D" parent="." unique_id=843454231]
 position = Vector2(1, 159)

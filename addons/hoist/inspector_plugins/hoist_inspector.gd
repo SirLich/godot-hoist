@@ -7,7 +7,7 @@ extends EditorInspectorPlugin
 class_name HoistInspector
 
 func _can_handle(object: Object) -> bool:
-	if "hoist" in object:
+	if "hoist" in object and object.hoist is TheHoist:
 		return true
 	return false
 

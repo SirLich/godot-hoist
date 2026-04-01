@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t6nqa4qauubb"]
+[gd_scene format=3 uid="uid://t6nqa4qauubb"]
 
 [ext_resource type="Script" uid="uid://bsocxp5hds2i8" path="res://examples/example.gd" id="1_jsbxn"]
 [ext_resource type="Script" uid="uid://bkqg7pfovxw48" path="res://addons/hoist/the_hoist.gd" id="2_0fely"]
@@ -7,50 +7,35 @@
 
 [sub_resource type="Resource" id="Resource_elwnb"]
 script = ExtResource("2_68jdq")
-property_name = "visible"
+property_name = "z_index"
 property_path = NodePath("TopSprite")
 property_data = {
 "class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "visible",
-"type": 1,
-"usage": 6
-}
-
-[sub_resource type="Resource" id="Resource_krhdl"]
-script = ExtResource("2_68jdq")
-property_name = "visible"
-property_path = NodePath("BottomSprite")
-property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "visible",
-"type": 1,
+"hint": 1,
+"hint_string": "-4096,4096,1",
+"name": "hoist_z_index",
+"type": 2,
 "usage": 6
 }
 
 [sub_resource type="Resource" id="Resource_68jdq"]
 script = ExtResource("2_0fely")
-properties = {
-"BottomSprite:visible": SubResource("Resource_krhdl"),
-"TopSprite:visible": SubResource("Resource_elwnb")
-}
-visible = null
-visible = null
+properties = Dictionary[String, ExtResource("2_68jdq")]({
+"TopSprite:z_index": SubResource("Resource_elwnb")
+})
+hoist_z_index = null
 metadata/_custom_type_script = "uid://bkqg7pfovxw48"
 
-[node name="Example" type="Node2D"]
+[node name="Example" type="Node2D" unique_id=585994960]
 script = ExtResource("1_jsbxn")
-my_own_var = null
 hoist = SubResource("Resource_68jdq")
+hoist_z_index = null
 
-[node name="TopSprite" type="Sprite2D" parent="."]
+[node name="TopSprite" type="Sprite2D" parent="." unique_id=716124857]
 texture = ExtResource("4_u60pw")
 centered = false
 
-[node name="BottomSprite" type="Sprite2D" parent="."]
+[node name="BottomSprite" type="Sprite2D" parent="." unique_id=843454231]
 position = Vector2(1, 159)
 texture = ExtResource("4_u60pw")
 centered = false

@@ -32,7 +32,9 @@ func get_value():
 func _get_property(prop : Object, name):
 	for p in prop.get_property_list():
 		if p.name == name:
-			return p
+			var new_property_data = p
+			new_property_data.name = "hoist_" + new_property_data.name
+			return new_property_data
 	return null
 
 	
@@ -44,9 +46,11 @@ func configure(prop : EditorProperty):
 	self.property_data = _get_property(prop.get_edited_object(), prop.get_edited_property())
 	
 func is_valid() -> bool:
-	var is_valid_type = property_data.type in VALID_TYPES
+	return true
 	
-	return is_valid_type
+	#var is_valid_type = property_data.type in VALID_TYPES
+	#
+	#return is_valid_type
 	#var is_instanced_scene = owning_object.owner == owning_object.get_tree().edited_scene_root
 	#
 	#return is_valid_type and not is_instanced_scene

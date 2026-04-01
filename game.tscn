@@ -1,10 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr7c12yl4i80l"]
+[gd_scene format=3 uid="uid://dr7c12yl4i80l"]
 
 [ext_resource type="Script" uid="uid://cycrirrnt4ktq" path="res://game.gd" id="1_ns5if"]
 [ext_resource type="PackedScene" uid="uid://t6nqa4qauubb" path="res://examples/Example.tscn" id="2_vvluj"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=417050574]
 script = ExtResource("1_ns5if")
 
-[node name="Example" parent="." instance=ExtResource("2_vvluj")]
-my_own_var = 0
+[node name="Example" parent="." unique_id=1860098073 instance=ExtResource("2_vvluj")]

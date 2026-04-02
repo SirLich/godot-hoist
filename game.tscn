@@ -8,4 +8,7 @@ script = ExtResource("1_ns5if")
 
 [node name="Example" parent="." unique_id=1860098073 instance=ExtResource("2_vvluj")]
 
+[node name="TopSprite" parent="Example" index="0" unique_id=716124857]
+offset = Vector2(599, 0)
+
 [editable path="Example"]

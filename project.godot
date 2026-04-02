@@ -30,7 +30,7 @@ hoist/debug=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/hoist/plugin.cfg")
+enabled=PackedStringArray("res://addons/hoist/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
 
 [hoist]
 

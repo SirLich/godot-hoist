@@ -7,6 +7,8 @@ properties, and provide an editor interface for hoisting them.
 extends EditorInspectorPlugin
 class_name HoistedPropertyInspector
 
+const PropertyOverrideCheckbox = preload("uid://bbwdbh4ceadf3")
+
 func _can_handle(object: Object) -> bool:
 	if object is Node and object.owner != null and "hoist" in object.owner:
 		return true
@@ -45,6 +47,7 @@ class ControlSniffer extends Control:
 	func inject():
 		var children = get_children_by_type(get_parent(), EditorProperty)
 		for prop in children:
+			var editor_property = prop as EditorProperty
 			var hoisted_property = HoistedProperty.new()
 			hoisted_property.configure(prop)
 			

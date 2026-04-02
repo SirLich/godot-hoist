@@ -4,12 +4,11 @@ Checkbox which will be instanced into the inspector to the left of hoistable pro
 
 @tool
 extends CheckBox
-#class_name PropertyOverrideCheckbox
 
 var hoisted_property : HoistedProperty = HoistedProperty.new()
-var hoist : TheHoist
+var hoist : Hoist
 
-func configure(hoisted_property : HoistedProperty, hoist : TheHoist):
+func configure(hoisted_property : HoistedProperty, hoist : Hoist):
 	var margin_container = MarginContainer.new()
 	margin_container.add_theme_constant_override("margin_right", -16)
 	add_sibling(margin_container)

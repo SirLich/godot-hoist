@@ -16,9 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Hoist"
 config/tags=PackedStringArray("addon")
-run/main_scene="uid://dr7c12yl4i80l"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 
@@ -31,7 +29,3 @@ hoist/debug=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/hoist/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
-
-[hoist]
-
-debug=true

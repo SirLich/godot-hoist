@@ -1,11 +1,10 @@
 """
-The HoistedPropertyInspector is used to sniff out potentialy hoistable
+Used to sniff out potentialy hoistable
 properties, and provide an editor interface for hoisting them.
 """
 
 @tool
 extends EditorInspectorPlugin
-class_name HoistedPropertyInspector
 
 const PropertyOverrideCheckbox = preload("uid://bbwdbh4ceadf3")
 
@@ -19,7 +18,7 @@ func _can_handle(object: Object) -> bool:
 	
 class ControlSniffer extends Control:
 	var object : Object
-	var hoist : TheHoist
+	var hoist : Hoist
 	
 	func get_children_recursive(parent: Node) -> Array[Node]:
 		var result: Array[Node] = []

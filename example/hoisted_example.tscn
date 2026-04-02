@@ -26,56 +26,54 @@ editor_data = {
 
 [sub_resource type="Resource" id="Resource_cmi6q"]
 script = ExtResource("2_mxgb2")
-property_name = "color"
-property_path = NodePath("ColorRect")
+property_name = "material_override"
+property_path = NodePath("MeshInstance3D")
 property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "hoist_color",
-"type": 20,
+"class_name": &"BaseMaterial3D,ShaderMaterial",
+"hint": 17,
+"hint_string": "BaseMaterial3D,ShaderMaterial",
+"name": "hoist_material_override",
+"type": 24,
 "usage": 6
 }
 editor_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "color",
-"type": 20,
+"class_name": &"BaseMaterial3D,ShaderMaterial",
+"hint": 17,
+"hint_string": "BaseMaterial3D,ShaderMaterial",
+"name": "material_override",
+"type": 24,
 "usage": 6
 }
 
 [sub_resource type="Resource" id="Resource_q2fwi"]
 script = ExtResource("2_mxgb2")
-property_name = "localize_numeral_system"
-property_path = NodePath("ColorRect")
+property_name = "mesh"
+property_path = NodePath("MeshInstance3D")
 property_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "hoist_localize_numeral_system",
-"type": 1,
+"class_name": &"Mesh",
+"hint": 17,
+"hint_string": "Mesh",
+"name": "hoist_mesh",
+"type": 24,
 "usage": 6
 }
 editor_data = {
-"class_name": &"",
-"hint": 0,
-"hint_string": "",
-"name": "localize_numeral_system",
-"type": 1,
+"class_name": &"Mesh",
+"hint": 17,
+"hint_string": "Mesh",
+"name": "mesh",
+"type": 24,
 "usage": 6
 }
 
 [sub_resource type="Resource" id="Resource_dxsvw"]
 script = ExtResource("3_dxsvw")
 properties = Dictionary[String, ExtResource("2_mxgb2")]({
-"ColorRect:color": SubResource("Resource_cmi6q"),
-"ColorRect:localize_numeral_system": SubResource("Resource_q2fwi"),
-"Label:text": SubResource("Resource_mxgb2")
+"Label:text": SubResource("Resource_mxgb2"),
+"MeshInstance3D:material_override": SubResource("Resource_cmi6q"),
+"MeshInstance3D:mesh": SubResource("Resource_q2fwi")
 })
 hoist_text = null
-hoist_color = null
-hoist_localize_numeral_system = null
 
 [node name="HoistedExample" type="Control" unique_id=1244037311]
 layout_mode = 3
@@ -90,3 +88,5 @@ offset_top = -41.0
 offset_right = 203.0
 offset_bottom = 112.0
 color = Color(1, 0.17254902, 1, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1522152020]

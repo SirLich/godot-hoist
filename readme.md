@@ -44,3 +44,7 @@ Sadly, the 'editable children' checkbox does more than just render children in t
 Therefor it's neccesary for hoisted scenes to be marked as editable. This plugin handles that for you.
 
 Nonetheless, the whole point of the plugin is that you hoist all of the properties that you care about. While using Hoist, you shouldn't need to actually *edit* the editable children.
+
+## Getting Hoist
+
+This plugin is far too experimental to be published in the asset library. If you want to use it, you can grab the `addons/hoist` folder. Or if you prefer, you can grab it using [Hyrax](https://github.com/SirLich/hyrax).

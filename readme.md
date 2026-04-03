@@ -48,3 +48,5 @@ Nonetheless, the whole point of the plugin is that you hoist all of the properti
 ## Getting Hoist
 
 This plugin is far too experimental to be published in the asset library. If you want to use it, you can grab the `addons/hoist` folder. Or if you prefer, you can grab it using [Hyrax](https://github.com/SirLich/hyrax).
+
+Still curios? [I have a blog post about hoist.](https://sirlich.dev/blog/hoist/)

@@ -73,6 +73,9 @@ properties = Dictionary[String, ExtResource("2_mxgb2")]({
 "MeshInstance3D:material_override": SubResource("Resource_cmi6q"),
 "MeshInstance3D:mesh": SubResource("Resource_q2fwi")
 })
+data_map = {
+&"hoist_text": null
+}
 hoist_text = null
 
 [node name="HoistedExample" type="Control" unique_id=1244037311]

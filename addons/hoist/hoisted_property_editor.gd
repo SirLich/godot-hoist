@@ -12,7 +12,7 @@ func _can_handle(object: Object) -> bool:
 
 ## Whether Hoist can be debugged (resource visible in root). Set via project settings.
 func is_debug_hoist() -> bool:
-	return false
+	return true
 
 func prop_changed(property: StringName, value: Variant, field: StringName, changing: bool, object_to_use):
 	object_to_use.set(property, value)
@@ -52,9 +52,8 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 
 			var editor = get_configured_editor_property(hoisted_property, object)
 			add_custom_control(editor)
-			#add_custom_control(editor) TODO: Not possible due to engine limitation.
+			#add_property_editor(editor) TODO: Not possible due to engine limitation.
 		
-		print(is_debug_hoist())
 		return !is_debug_hoist() # Allows inspection of the 'Hoist' variable
 	else:
 		return false

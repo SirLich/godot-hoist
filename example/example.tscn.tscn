@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dfp6psukqyds0"]
-
-[ext_resource type="PackedScene" uid="uid://cjdi5y2tt43js" path="res://example/hoisted_example.tscn" id="1_ct7o6"]
-
-[node name="Example_tscn" type="Node2D" unique_id=941607336]
-
-[node name="HoistedExample" parent="." unique_id=1244037311 instance=ExtResource("1_ct7o6")]
-
-[editable path="HoistedExample"]
